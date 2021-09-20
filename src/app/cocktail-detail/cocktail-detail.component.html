@@ -1,0 +1,39 @@
+
+<br>
+<div class="breadcrumbs" *ngIf='cocktail'>
+    <a routerLink="/">Home > </a> 
+    <a routerLink="/cocktails">Cocktails > </a>
+    <a *ngFor="let drink of cocktail"> {{ drink.strDrink }} </a>
+</div>
+
+<div class="container" *ngIf='cocktail'>
+    <div class="drink-details" *ngFor="let drink of cocktail">
+        <div class="img-holder">
+            <img src="{{ drink.strDrinkThumb }}">
+        </div>
+
+        <div class="info">
+            <h1>{{ drink.strDrink }}</h1>
+
+            <p>Category : {{ drink.strCategory }}</p>
+            <p>Glass Type : {{ drink.strGlass }}</p>
+            <p>IBA : {{ drink.strIBA || 'No Info' }}</p>
+
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                <span><em> {{ drink.strIngredient1 }}, {{ drink.strIngredient2 }}, {{ drink.strIngredient3 }}, 
+                    {{ drink.strIngredient4 }}, {{ drink.strIngredient5 }}, {{ drink.strIngredient6 }},
+                    {{ drink.strIngredient7 }} </em> </span>
+            </div>
+
+            <div class="instructions">
+                <br>
+                <h3>Instructions</h3>
+                <span><em> {{ drink.strInstructions }} </em></span>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

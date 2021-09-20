@@ -1,0 +1,69 @@
+<div class="container">
+
+    <div *ngIf="id; else addCocktail">
+        <h2 class="add-drink-clr">{{ edit_form_title }}</h2>
+    </div>
+
+    <ng-template #addCocktail>
+        <h2 class="add-drink-clr">{{ form_title }}</h2>
+    </ng-template>
+
+    <div *ngIf="successMsg">
+        <p>{{ successMsg }}</p>
+    </div>
+
+    <form class="add-form">
+        <div class="form-control">
+            <label *ngIf="id">Image URL</label>
+            <input type="text" [(ngModel)]='image_url' name="image_url" id="image_url" placeholder="Cocktail Image Url">
+        </div>
+
+        <div class="form-control">
+            <label *ngIf="id">Cocktail Name</label>
+            <input type="text" [(ngModel)]="title" name="title" id="title" placeholder="Cocktail Name">
+        </div>
+
+        <div class="form-control">
+            <label *ngIf="id">Cocktail Category</label>
+            <input type="text" [(ngModel)]="category" name="category" id="category" placeholder="Category">
+        </div>
+
+        <h3 *ngIf="!id">{{ title_add_ingr }}</h3>
+        <h3 *ngIf="id">{{ title_edit_ingr }}</h3>
+
+        <div class="form-control">
+            <label *ngIf="id">Ingredient1</label>
+            <input type="text" [(ngModel)]="ingredient1" name="ingredient1" id="ingredient1" placeholder="Ingredient 1">
+        </div>
+
+        <div class="form-control">
+            <label *ngIf="id">Ingredient2</label>
+            <input type="text" [(ngModel)]="ingredient2" name="ingredient2" id="ingredient2" placeholder="Ingredient 2">
+        </div>
+
+        <div class="form-control">
+            <label *ngIf="id">Ingredient3</label>
+            <input type="text" [(ngModel)]="ingredient3" name="ingredient3" id="ingredient3" placeholder="Ingredient 3">
+        </div>
+
+        <div class="form-control">
+            <label *ngIf="id">Ingredient4</label>
+            <input type="text" [(ngModel)]="ingredient4" name="ingredient4" id="ingredient4" placeholder="Ingredient 4">
+        </div>
+        <div class="form-control">
+            <label *ngIf="id">Ingredient5</label>
+            <input type="text" [(ngModel)]="ingredient5" name="ingredient5" id="ingredient5" placeholder="Ingredient 5">
+        </div>
+
+        <!-- ACTIVATE COCKTAIL IF STOCK IS AVAILBLE FOR FUTURE REF -->
+        <!-- <div class="form-control form-control-check">
+            <label>Set Active</label>
+            <input type="checkbox" name="reminder" id="reminder">
+        </div> -->
+
+        <input (click)='onSubmit()' *ngIf="!id" type="submit" value="Add Cocktail" class="btn btn-block">
+
+        <input (click)="onUpdate()" *ngIf="id" type="submit" value="Edit Cocktail" class="btn btn-block">
+
+    </form>
+</div>

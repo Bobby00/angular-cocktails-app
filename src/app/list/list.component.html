@@ -1,0 +1,12 @@
+<h2>Cocktails</h2>
+<ul class="cocktails" *ngIf='cocktails'>
+    <li *ngFor="let cocktail of cocktails | slice:0:5;">
+        <img src="{{ cocktail.strDrinkThumb }}">
+        <p class="name"><a routerLink="/cocktails/{{cocktail.idDrink}}"  name={{cocktail.idDrink}}>{{ cocktail.strDrink }}</a></p>
+        <p class="category"> {{ cocktail.strCategory }} </p>
+        <br>
+        <p class="ingredients">Ingredients</p>
+        <span>{{ cocktail.strIngredient1 }}, {{ cocktail.strIngredient2 }}, {{ cocktail.strIngredient3 }}</span>
+    </li>
+</ul>
+

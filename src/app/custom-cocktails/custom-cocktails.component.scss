@@ -1,0 +1,70 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        background: rgb(238, 238, 238);
+        padding: 1em;
+        margin-right: 10px;
+        width: 20%;
+        height: 250px;
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ingredients {
+            font-weight: 700;
+            color: red;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        p.name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        p.category {
+            text-transform: uppercase;
+            font-size: .9rem;
+        }
+    }
+}
+
+.search {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+
+.search-button {
+    padding: 10px 15px;
+    background-color: yellow;
+    font-weight: bolder;
+}
+
+.edits {
+    button {
+        margin-top: 12px; 
+        width: 40%;
+        font-size: 12px;
+    }
+    .floatRight {
+        float: right;
+    }
+}

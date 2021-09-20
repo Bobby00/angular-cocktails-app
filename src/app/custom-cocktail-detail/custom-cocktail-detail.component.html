@@ -1,0 +1,36 @@
+
+<br>
+<div class="breadcrumbs" *ngIf='cocktail'>
+    <a routerLink="/">Home > </a> 
+    <a routerLink="/custom-cocktails">Cocktails > </a>
+    <a *ngFor="let drink of cocktail"> {{ drink.title }} </a>
+</div>
+
+<div class="container" *ngIf='cocktail'>
+    <div class="drink-details" *ngFor="let drink of cocktail">
+        <div class="img-holder">
+            <img src="{{ drink.image_url }}">
+        </div>
+
+        <div class="info">
+            <h1>{{ drink.title }}</h1>
+
+            <p>Category : {{ drink.category }}</p>
+
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                <span><em> {{ drink.ingredient1 }}, {{ drink.ingredient2 }}, {{ drink.ingredient3 }}, 
+                    {{ drink.ingredient4 }}, {{ drink.ingredient5 }}</em> </span>
+            </div>
+
+            <div class="instructions">
+                <br>
+                <h3>Instructions</h3>
+                <span><em> {{ drink.strInstructions }} </em></span>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

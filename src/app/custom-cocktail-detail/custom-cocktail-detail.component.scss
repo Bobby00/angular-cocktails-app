@@ -1,0 +1,40 @@
+.breadcrumbs a {
+    text-decoration: none;
+    font-size : 14px;
+}
+
+.drink-details {
+    display: flex;
+}
+
+.img-holder img {
+    max-width: 400px;
+    margin-top: 5%;
+}
+
+.info {
+    margin-left: 10%;
+
+    h1 {
+        margin-top: 15%;
+    }
+
+    .ingredients {
+        margin-top: 10%;
+
+        h3 {
+            color: blueviolet;
+            margin: unset;
+        }
+    }
+
+    .instructions {
+        h3 {
+            color: tomato;
+            margin: unset;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+}

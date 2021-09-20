@@ -1,0 +1,23 @@
+<h2>Custom Cocktails</h2>
+
+<div style="background-color: red;" *ngIf="successMsg">
+    <p>{{ successMsg }}</p>
+</div>
+
+<input [(ngModel)]="filterTerm" class="search" type="text" placeholder="Search Cocktails....">
+
+<ul class="cocktails" *ngIf='cocktails'>
+    <li *ngFor="let cocktail of cocktails | filter:filterTerm">
+        <img src="{{ cocktail.image_url }}">
+        <p class="name"><a routerLink="/custom-cocktails/{{cocktail.id}}"  name={{cocktail.id}}>{{ cocktail.title }}</a></p>
+        <p class="category"> {{ cocktail.category }} </p>
+        <br>
+        <p class="ingredients">Ingredients</p>
+        <span>{{ cocktail.ingredient1 }}, {{ cocktail.ingredient2 }}, {{ cocktail.ingredient3 }}</span>
+
+        <div class="edits">
+            <button (click)="deleteCocktail(cocktail.id)">Delete</button>
+            <button class="floatRight" [routerLink]="['/create', cocktail.id]">Edit</button>
+        </div>
+    </li>
+</ul>
