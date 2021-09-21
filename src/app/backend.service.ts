@@ -13,7 +13,7 @@ export class BackendService {
   constructor(private _http: HttpClient) { }
 
   // Make connection to backend server
-  apiUrl = 'https://git.heroku.com/cocktail-node-backend.git/drinks'
+  apiUrl = 'https://cocktail-node-backend.herokuapp.com/drinks'
 
   // get all cocktails data in db
   getAllCocktails():Observable<any> {
